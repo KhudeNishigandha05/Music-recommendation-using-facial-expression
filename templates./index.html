@@ -1,0 +1,403 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Music Recommendation System</title>-->
+<!--    <style>*{-->
+<!--        margin: 0;-->
+<!--        padding: 0;-->
+<!--        box-sizing: border-box;-->
+<!--        font-family: 'Poppins',sans-serif;-->
+<!--    }-->
+<!--    .header{-->
+<!--        width: 100%;-->
+<!--        height: 100vh;-->
+<!--        background-image: linear-gradient(rgba(5,0,136,0.5),rgba(5,0,136,0.5)),url(static/img1.jpg);-->
+<!--        background-position: center;-->
+<!--        background-size: cover;-->
+<!--        overflow-x: hidden;-->
+<!--    }-->
+
+<!--    nav{-->
+<!--        width: 100%;-->
+<!--        display: flex;-->
+<!--        justify-content: space-between;-->
+<!--        padding: 18px 8%;-->
+<!--        transition: background 1s;-->
+<!--    }-->
+
+<!--    nav .logo{-->
+<!--        display: flex;-->
+<!--        align-items: center;-->
+<!--        font-size: 26px;-->
+<!--        font-weight: 600;-->
+<!--        color: #FFF;-->
+<!--    }-->
+
+<!--    nav .logo img{-->
+<!--        width: 40px;-->
+<!--        margin-right: 10px;-->
+
+<!--    }-->
+
+<!--    nav ul li{-->
+<!--        display: inline-block;-->
+<!--        list-style: none;-->
+<!--        margin: 10px 20px;-->
+
+<!--    }-->
+
+<!--    nav ul li a{-->
+<!--        text-decoration: none;-->
+<!--        color: #FFF;-->
+<!--        font-weight: 800;-->
+<!--    }-->
+<!--    nav:hover{-->
+<!--        background: #fff;-->
+<!--    }-->
+
+<!--    nav:hover .logo{-->
+<!--        color: #333;-->
+<!--    }-->
+
+<!--    nav:hover ul li a{-->
+<!--        color: #333;-->
+<!--    }-->
+
+<!--    .content{-->
+<!--        margin-top: 9%;-->
+<!--        margin-left: 9%;-->
+<!--        color: #FFF;-->
+
+
+<!--    }-->
+
+<!--    .content h1{-->
+<!--        font-size: 120PX;-->
+<!--        font-weight: 600;-->
+<!--        line-height: 140px;-->
+<!--    }-->
+
+<!--    .content p{-->
+<!--        max-width: 500px;-->
+<!--        line-height: 28px;-->
+<!--        opacity: 0;-->
+<!--    }-->
+
+<!--    .links{-->
+<!--        margin-top: 30px;-->
+<!--        opacity: 0;-->
+<!--    }-->
+<!--    .links a{-->
+<!--        color: #FFF;-->
+<!--        display: inline-block;-->
+<!--        text-decoration: none;-->
+
+<!--    }-->
+<!--        .links a:hover{-->
+<!--        color: blue;-->
+
+<!--    }-->
+<!--    .btn:hover{-->
+<!--        background-color: rgb(0, 195, 255);-->
+<!--    }-->
+<!--    .btn{-->
+<!--        border: 2px solid #fff;-->
+<!--        padding: 10px 35px;-->
+<!--        border-radius: 30px;-->
+<!--        margin-right: 15px;-->
+<!--        font-weight: 700;-->
+<!--    }-->
+
+<!--    .slide-left{-->
+<!--        animation: slideleft 1s linear forwards;-->
+
+<!--    }-->
+
+<!--    .content h1{-->
+<!--        font-family: Brush Script MT,cursive;-->
+<!--    }-->
+
+<!--    @keyframes slideleft{-->
+<!--        0%{-->
+<!--            transform: translate(100px);-->
+<!--            opacity: 0;-->
+<!--        }-->
+<!--        100%{-->
+<!--            transform: translate(0px);-->
+<!--            opacity: 1;-->
+<!--        }-->
+
+<!--    }-->
+
+<!--    p.slide-left{-->
+<!--        animation-delay: 1s;-->
+<!--    }-->
+<!--    .links.slide-left{-->
+<!--        animation-delay: 2s;-->
+<!--        color:blue;-->
+<!--    }-->
+<!--    .output{-->
+<!--        color:white;-->
+<!--        font-family:"cursive"-->
+<!--        }-->
+<!--     .output1{-->
+<!--         margin-top:20px;-->
+<!--        color:white;-->
+<!--         display: inline-block;-->
+<!--        font-family:"cursive"-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="header">-->
+<!--        <nav>-->
+<!--            <div class="logo">-->
+<!--                <img src="static/img2.png" alt="">-->
+<!--                <span>Moodify</span>-->
+<!--            </div>-->
+<!--            <ul>-->
+<!--                <li><a href="#">HOME</a></li>-->
+<!--                <li><a href="#">FEATURES</a></li>-->
+<!--                <li><a href="#">CONTACT</a></li>-->
+<!--                <li><a href="http://localhost:5000/templates/join_page">TEAM-INFO</a></li>-->
+
+<!--                <li><a href="#">SUPPORT</a></li>-->
+<!--            </ul>-->
+<!--        </nav>-->
+
+<!--        <div class="content">-->
+<!--            <h1 class="slide-left">To Embrace your<br>Finifugals....!</h1>-->
+<!--            <div class="links slide-left">-->
+<!--&lt;!&ndash;                <a href=camera class="btn"><input type=”button” value=click></a>&ndash;&gt;-->
+<!--                <a href=camera class="btn">click</a>-->
+<!--&lt;!&ndash;                <button name="click", onclick="camera()" >Lets Start</button>&ndash;&gt;-->
+<!--&lt;!&ndash;                <input type="button" id='script' name="click" value=" click " onclick="camera();">&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </br>-->
+<!--    <div class="output" >-->
+<!--        {% if final_output %}-->
+<!--    <h2 style="font-family:Bio-Rhyme">Your Emotion is {{final_output}}</h2>-->
+<!--        <div class="output1" >-->
+
+<!--         <a href=songs/{{final_output}} class="btn">Songs</a>-->
+<!--            </div>-->
+<!--    {% endif %}-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommendation System</title>
+    <style>*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins',sans-serif;
+    }
+    .header{
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(rgba(5,0,136,0.5),rgba(5,0,136,0.5)),url(static/background_image.jpg);
+        background-position: center;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+
+    nav{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 18px 8%;
+        transition: background 1s;
+    }
+
+    nav .logo{
+        display: flex;
+        align-items: center;
+        font-size: 26px;
+        font-weight: 600;
+        color: #FFF;
+    }
+
+    nav .logo img{
+        width: 40px;
+        margin-right: 10px;
+
+    }
+
+    nav ul li{
+        display: inline-block;
+        list-style: none;
+        margin: 10px 20px;
+
+    }
+
+    nav ul li a{
+        text-decoration: none;
+        color: #FFF;
+        font-weight: 800;
+    }
+    /* nav:hover{
+        background: #fff;
+    } */
+
+    nav:hover .logo{
+        color: #f1d2d2;
+    }
+
+    nav:hover ul li a{
+        color: #f0c7c7;
+    }
+
+    .content{
+        margin-top: 10%;
+        margin-left: 10%;
+        color: #FFF;
+
+
+    }
+
+    .content h5{
+        font-size: 80PX;
+        font-weight: 100;
+        line-height: 100px;
+        margin-left: 30px;
+    }
+
+    .content p{
+        max-width: 500px;
+        line-height: 28px;
+        opacity: 0;
+    }
+
+    .links{
+        margin-top: 30px;
+        opacity: 0;
+    }
+    .links a{
+        color: #FFF;
+        display: inline-block;
+        text-decoration: none;
+
+    }
+        .links a:hover{
+        color: rgb(246, 246, 251);
+
+    }
+    .btn:hover{
+        background: linear-gradient(to right,#bb59eb,#8caaf0);
+    }
+    .btn{
+        border: 2px solid #fff;
+        padding: 10px 35px;
+        border-radius: 30px;
+        font-weight: 600;
+        margin-left: 60px;
+        /* position: relative; */
+        line-height: 100px;
+    }
+
+    .slide-left{
+        animation: slideleft 1s linear forwards;
+
+    }
+
+    .content h5{
+        font-family: Century Gothic;
+    }
+
+    .content a{
+        color: white;
+        /* margin-top: 20px; */
+    }
+
+    @keyframes slideleft{
+        0%{
+            transform: translate(100px);
+            opacity: 0;
+        }
+        100%{
+            transform: translate(0px);
+            opacity: 1;
+        }
+
+    }
+
+    p.slide-left{
+        animation-delay: 1s;
+    }
+    .links.slide-left{
+        animation-delay: 2s;
+        color:rgb(243, 243, 249);
+    }
+    .output{
+        color:white;
+        font-family:"Century Gothic";
+        margin-top: 20px;
+        margin-left: 50px;
+        }
+        .output a{
+            color:white;
+        }
+
+     .output1{
+         margin: top 1px;
+        color:white;
+         display: inline-block;
+        font-family:"Century Gothic";
+        line-height: 90px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <div class="logo">
+                <img src="static/img2.png" alt="">
+                <span>mūsica</span>
+            </div>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">FEATURES</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="http://localhost:5000/templates/join_page">TEAM-INFO</a></li>
+
+                <li><a href="#">SUPPORT</a></li>
+                <li><a href="http://localhost/login_page/login_form.php">LOG OUT</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <h5>Music is the strongest form of magic</h5>
+            <!-- <div class="links slide-left"> -->
+<!--                <a href=camera class="btn"><input type=”button” value=click></a>-->
+                <a href=camera class="btn">click</a>
+<!--                <button name="click", onclick="camera()" >Lets Start</button>-->
+<!--                <input type="button" id='script' name="click" value=" click " onclick="camera();">-->
+            <!-- </div> -->
+        </div>
+    </br>
+    <div class="output" >
+        {% if final_output %}
+    <h2 style="font-family:Century Gothic">Your Emotion is {{final_output}}</h2>
+        <div class="output1" >
+
+         <a href=songs/{{final_output}} class="btn">Songs</a>
+            </div>
+    {% endif %}
+      </div>
+
+    </div>
+</body>
+</html>
